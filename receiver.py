@@ -10,13 +10,13 @@ while True:
     nameLen = int.from_bytes(data[readOffset:readOffset+4], byteorder='big')
     readOffset += 4
 
-    name = data[readOffset:readOffset+nameLen].decode("utf-8")
+    name = data[readOffset:readOffset+nameLen].decode("utf-16")
     readOffset += nameLen
 
     messageLen = int.from_bytes(data[readOffset:readOffset+4], byteorder='big')
     readOffset += 4
 
-    message = data[readOffset:readOffset+messageLen].decode("utf-8")
+    message = data[readOffset:readOffset+messageLen].decode("utf-16")
     readOffset += messageLen
 
     print(f"<{name}> {message}")

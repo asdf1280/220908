@@ -15,10 +15,12 @@ while True:
 
     # send message to server
     ba = bytearray()
-    ba.extend(len(name).to_bytes(4, byteorder='big'))
-    ba.extend(name.encode("utf-8"))
-    ba.extend(len(message).to_bytes(4, byteorder='big'))
-    ba.extend(message.encode("utf-8"))
+    data = name.encode("utf-16")
+    ba.extend(len(data).to_bytes(4, byteorder='big'))
+    ba.extend(data)
+    data = message.encode("utf-16")
+    ba.extend(len(data).to_bytes(4, byteorder='big'))
+    ba.extend(data)
 
     print(ba)
 
