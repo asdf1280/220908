@@ -3,6 +3,8 @@ import socket
 s1 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s1.bind(('', 64345))
 
+print("Receiver is ready!")
+
 while True:
     data, addr = s1.recvfrom(2048)
     
