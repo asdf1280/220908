@@ -1,7 +1,7 @@
 import socket
 
 s1 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s1.bind(('', 12345))
+s1.bind(('', 64345))
 
 while True:
     data, addr = s1.recvfrom(2048)
