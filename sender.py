@@ -15,5 +15,9 @@ while True:
 
     # send message to server
     ba = bytearray()
-    ba.extend(len(name).to_bytes(4, byteorder='big'), name.encode("utf-8"))
-    ba.extend(len(message).to_bytes(4, byteorder='big'), message.encode("utf-8"))
+    ba.append(len(name).to_bytes(4, byteorder='big'))
+    ba.append(name.encode("utf-8"))
+    ba.append(len(message).to_bytes(4, byteorder='big'))
+    ba.append(message.encode("utf-8"))
+
+    sock.sendto(ba, ('255.255.255.255', 12345))
