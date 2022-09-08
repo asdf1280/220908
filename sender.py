@@ -20,4 +20,6 @@ while True:
     ba.extend(len(message).to_bytes(4, byteorder='big'))
     ba.extend(message.encode("utf-8"))
 
-    sock.sendto(ba, ('255.255.255.255', 12345))
+    print(ba)
+
+    sock.sendto(ba, ('255.255.255.255', 64345))
